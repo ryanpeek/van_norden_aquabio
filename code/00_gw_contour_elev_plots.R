@@ -136,7 +136,7 @@ gw_depth_contour <- function(yr, mon, mon_name){
   #ggsave(filename = paste0("figs/GW_contour_depth_virid_",yr,"_", mon,"_abv0.png"), width = 9.6, height = 6, units = "in", dpi = 200)
   
   # for unfiltered data
-  ggsave(filename = paste0("figs/GW_contour_depth_virid_",yr,"_", mon,"_akima.png"), width = 9.6, height = 6, units = "in", dpi = 200)
+  ggsave(filename = paste0("figures/GW_contour_depth_virid_",yr,"_", mon,"_akima.png"), width = 9.6, height = 6, units = "in", dpi = 200)
   
   
   print(paste0("Plot: ", yr, "-", mon_name, " completed"))
@@ -228,7 +228,7 @@ gw_contour <- function(yr, mon, mon_name){
     geom_point(data=plotdfC, aes(x=Easting, y=Northing), pch=16) +
     geom_text(data=wells_rtk_sf, aes(x=Easting, y=Northing, label=wellID), hjust = -.3, family="Roboto Condensed")
   
-  ggsave(filename = paste0("figs/GW_contour_elev_virid_",yr,"_", mon,"_abv0.png"), width = 9.6, height = 6, units = "in", dpi = 200)
+  ggsave(filename = paste0("figures/GW_contour_elev_virid_",yr,"_", mon,"_abv0.png"), width = 9.6, height = 6, units = "in", dpi = 200)
   
   # for unfiltered data
   #ggsave(filename = paste0("figs/GW_contour_elev_virid_",yr,"_", mon,"_akima.png"), width = 9.6, height = 6, units = "in", dpi = 200)
