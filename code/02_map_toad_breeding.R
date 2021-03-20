@@ -28,6 +28,8 @@ eggs20 <- st_read("data/2020_vannorden_aqbio_pts.kml", layer = "Eggs")
 breed20 <- st_read("data/2020_vannorden_aqbio_pts.kml", layer = "BreedingAreas")
 pts <- st_read("data/2020_vannorden_aqbio_pts.kml", layer = "Waypoints")
 
+# make a meadow buffer for getting baselayers
+vn_mdw_buff <- st_buffer(st_transform(vn_mdw_boundary, 3310), 300)
 
 # Preview with Mapview ----------------------------------------------------
 
@@ -42,53 +44,88 @@ m3 <- mapview(vn_mdw_boundary, color="green4", alpha.regions=0.05, lwd=3,
 
 (mapOut <- m1 + m2 + m3)
 
+# Get Map Baselayers --------------------------------------------------------
+
+# for types see: OpenStreetMap::openmap(), and getMapInfo() for credits
+OpenStreetMap::getMapInfo()[,1]
+gm_osm <- read_osm(vn_mdw_buff, type = "osm", raster=TRUE)
+gm_bing <- read_osm(vn_mdw_buff, type = "bing", raster=TRUE)
+gm_stamterrain <- read_osm(vn_mdw_buff, type = "stamen-terrain", raster=TRUE) # very plain
+# gm_etopo <- read_osm(vn_mdw_buff, type = "esri-topo", raster=TRUE) # shows all as blue lake van norden
+gm_esri <- read_osm(vn_mdw_buff, type = "esri", raster=TRUE) # s
+
+# test 
+  tm_shape(gm_osm) + tm_rgb(alpha = 0.7) + # very green
+  tm_shape(gm_stamterrain) + tm_rgb(alpha = 0.7) + # closest to map of interest
+  #tm_shape(gm_bing) + tm_rgb(alpha=0.5) + # nice aerial late winter/early spring, snow wetup
+  #tm_shape(gm_esri) + tm_rgb(alpha=0.9) + # nice aerial late winter/early spring, snow wetup
+  # mdw boundary
+  tm_shape(vn_mdw_boundary) +
+  tm_polygons(border.col="green4", alpha = 0, border.alpha = 0.9, lwd=3)
+
+# save out
+save(gm_osm, gm_stamterrain, gm_bing, file = "data_output/vn_osm_basemaps.rda")
+
+
 # Make Map ----------------------------------------------------------------
 
-
-gm_osm <- read_osm(h10, type = "esri-topo", raster=TRUE)
-save(gm_osm, file = "data_output/tmaptools_h10_osm_natgeo.rda")
-load("data_output/tmaptools_h10_osm_natgeo.rda")
-
-# LShasta map with DEM
+# Van Norden with Aquatic Bio
 (map_base <-
    # baselayer
-   tm_shape(gm_osm) + tm_rgb() +
-   # subcatchments: all in white
-   tm_shape(catch_final) +
-   tm_polygons(border.col="white", alpha = 0, border.alpha = 0.9, lwd=0.3, lty=2) +
-   # adjusted/revised catchments
-   tm_shape(df_catch_diss) +
-   tm_fill(col = "comid_f", alpha = 0.5, title = "Catchment COMID") +
-   # HUC10 boundary
-   tm_shape(h10) +
-   tm_polygons(border.col="gray30", alpha = 0, lwd=3) +
-   # flowlines
-   tm_shape(flowlines_map) + tm_lines(col="darkblue", lwd="streamcalc", scale = 2.25, legend.lwd.show = FALSE) +
-   tm_shape(evans) + tm_lines(col="darkblue", lwd=0.5) +
+   tm_shape(gm_stamterrain) + tm_rgb(alpha = 0.8) +
+   #tm_shape(gm_osm) + tm_rgb(alpha = 0.5) +
+   # mdw boundary
+   tm_shape(vn_mdw_boundary) +
+   tm_polygons(border.col="green4", alpha = 0, border.alpha = 0.9, lwd=3, 
+               legend.lwd.show=FALSE) +
+   # former lake boundary
+   tm_shape(vn_lake_boundary) +
+   tm_polygons(border.col="cornflowerblue", alpha = 0, border.alpha = 0.5, lwd=1, legend.lwd.show=FALSE) +
+   
    # AOI lines
-   tm_shape(aoi_comid) + tm_lines(col="coral1", lwd=3.2) +
-   # springs
-   tm_shape(lsh_springs) +
-   tm_dots(col="skyblue", size = 1.2, title = "Springs", legend.show = TRUE, shape = 21) +
-   tm_text("Name", auto.placement = TRUE, xmod=0.4, just = "left", shadow = TRUE )+
-   # gages
-   tm_shape(gages) +
-   tm_dots(col="darkblue", size = 1.2, title = "Gages", legend.show = TRUE, shape = 21) +
-   tm_text("Name",col = "darkblue", size = 1, fontface = "bold",
-           auto.placement = TRUE, just = "left", xmod=.6, ymod=1, shadow = TRUE)+
+   tm_shape(vn_stream_reaches) + tm_lines(col="coral1", lwd=3.2, legend.lwd.show = TRUE) +
+   
+   # flowlines
+   tm_shape(vn_streamline) + 
+   tm_lines(col="darkblue", lwd = 1, legend.lwd.show = TRUE) +
+   
+   # wells
+   tm_shape(vn_wells) +
+   tm_dots(col="skyblue", size = 0.4, title = "Wells", legend.show = TRUE, shape = 21) +
+   tm_text("wellID", auto.placement = TRUE, size = 0.8, xmod=0.4, 
+           fontface="italic", just = "left", shadow = TRUE )+
+   tm_add_legend('symbol', shape = 21,
+                 col = c("skyblue"),
+                 border.col = "grey40",
+                 size = c(0.8),
+                 labels = c('Wells'),
+                 title="Points") +
+   
+   # eggs
+   tm_shape(eggs20) +
+   tm_dots(col="yellow", size = 0.5, title = "2020 Western Toad Eggs", legend.is.portrait = TRUE, shape = 21) +
+   tm_add_legend('symbol', shape = 21, 
+                 col = c("yellow"),
+                 border.col = c("grey50"),
+                 size = c(0.8),
+                 labels = c('Eggs'),
+                 title="") +
+   
    # layout
-   tm_layout(frame=FALSE) +
-   tm_layout(title = "Little Shasta",
-             frame = FALSE,
-             fontfamily = "Roboto Condensed",
-             legend.outside = FALSE, attr.outside = FALSE,
-             inner.margins = 0.01, outer.margins = (0.01),
-             #legend.position = c(0.6,0.85),
-             title.position = c(0.7, 0.95)) +
+   tm_layout(title = "Van Norden: \nWestern Toad Eggs (2020)",
+             frame = FALSE, attr.outside = FALSE,
+             title.position = c(0.55, 0.88),
+             fontfamily = "Roboto",
+             legend.text.fontfamily = "Roboto Condensed", 
+             legend.text.size = 0.7,
+             legend.outside = FALSE, #legend.bg.color = "white", 
+             legend.bg.alpha = 0.7, legend.width = 25,
+             legend.frame = FALSE, legend.position = c(0.85,0.7),
+             inner.margins = 0.01, outer.margins = (0.01)) +
    tm_compass(type = "4star", position = c("left","bottom")) +
    tm_scale_bar(position = c("left","bottom")))
 
 # save
-tmap_save(map_base, filename = "figs/map_of_h10_w_COMID_catch_w_AOIsegs.jpg", height = 8.5, width = 11, units = "in", dpi = 300)
+tmap_save(map_base, filename = "figures/tmap_of_2020_western_toad_eggs.jpg", height = 8.5, width = 11, units = "in", dpi = 300)
 
 
