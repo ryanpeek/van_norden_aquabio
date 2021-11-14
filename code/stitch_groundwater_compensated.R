@@ -3,7 +3,9 @@
 
 # Libraries ---------------------------------------------------------------
 
-library(tidyverse)
+library(dplyr)
+library(readr)
+library(ggplot2)
 library(fs)
 library(lubridate)
 library(glue)
@@ -29,7 +31,7 @@ df_all <- read_csv(comp_files, id = "filename", skip = 11) %>%
   mutate(datetime = coalesce(datetime_mdy, datetime_ymd)) %>% 
   select(-c(datetime_mdy, datetime_ymd, ms, Date, Time)) %>% 
   # fix filename
-  mutate(station = basename(fs::path_dir(filename)))
+  mutate(station = as.factor(basename(fs::path_dir(filename))))
 
 summary(df_all)
 
