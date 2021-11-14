@@ -41,9 +41,16 @@ table(df_all$station)
 # Plot --------------------------------------------------------------------
 
 ggplot() + 
-  geom_line(data=df_all, aes(x=datetime, y=TEMPERATURE))+
-  facet_wrap(.~station)
+  geom_line(data=df_all, aes(x=datetime, y=TEMPERATURE), color="orange3")+
+  facet_wrap(.~station) +
+  labs(title = "VN GW groundwater solinst data", x="") +
+  theme_bw()
+ggsave(filename = "figures/gw_loggers_compensated_raw_temp.png",
+       width = 11, height = 8.5, dpi=300)
 
 ggplot() + 
   geom_line(data=df_all, aes(x=datetime, y=LEVEL), color="cyan4")+
-  facet_wrap(.~station)
+  facet_wrap(.~station)+  labs(title = "VN GW groundwater solinst data", x="") +
+  theme_bw()
+ggsave(filename = "figures/gw_loggers_compensated_raw_stage.png",
+       width = 11, height = 8.5, dpi=300)
