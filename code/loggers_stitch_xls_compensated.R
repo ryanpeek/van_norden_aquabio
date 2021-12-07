@@ -97,21 +97,16 @@ clean_vn_excel_loggerdata <- function(path_to_file){
 # apply function
 df_xls <- map_df(xls_vn_paths, ~clean_vn_excel_loggerdata(.x))
 
-# visualize!? (we know F03 has only one year or less of data)
+# double check and visualize!? (we know F03 has only one year or less of data)
 ggplot() + 
   geom_line(data=df_xls, aes(x=datetime, y=piezo_comp_level_ft), color="cyan4")+
   facet_wrap(.~site_id)+  labs(title = "VN GW groundwater piezo compensated data", x="") +
-  theme_bw()
-# yay
+  theme_bw() # yay
 
 table(df_xls$site_id) # check it worked?
 
 # df_xls %>% group_by(site_id, year(datetime)) %>% tally() %>% View() # YES!
-# looks like only 2013-2017
-
-# Export it Out -----------------------------------------------------------
-
-#write_csv(df_xls, file = "data_output/vn_well_loggers_2013-2017_compensated.csv.gz")
+# data is only 2013-2017
 
 # Read in csv Files -----------------------------------------------------------
 
@@ -149,27 +144,33 @@ df_csv <- read_csv(comp_csv_files,
     TRUE ~ site_full
   ))
 
+# warning message here is ok, it has to do with different date formats...all good!
+
 # view
 summary(df_csv)
 
 # check site ids
-table(df_all$site_full)
-table(df_all$site_id)
+table(df_csv$site_full)
+table(df_csv$site_id)
 
 # plot each and check?
-df_csv %>% filter(site_id=="VN_C03") %>% 
+df_csv %>% 
+  #filter(site_id=="VN_C03") %>% 
   ggplot(data=.) + 
-  geom_line(aes(x=datetime, y=piezo_comp_level_ft), color="cyan4") +
+  #facet_grid(site_id~.) +
+  geom_line(aes(x=datetime, y=piezo_comp_level_ft, color=site_id)) +
   labs(title = "VN GW groundwater piezo compensated data", x="") +
   theme_bw()
-  
-#ok looks good
+
+#ok looks good!
 
 # JOIN IT ALL! -------------------------------------------------------
 
-# use janitor
+# use janitor to check column names will join/bind
 janitor::compare_df_cols(df_xls, df_csv)
 janitor::compare_df_cols_same(df_xls, df_csv)
+
+# ok now join all data
 df_all <- bind_rows(df_xls, df_csv)
 
 # check sites
@@ -177,13 +178,18 @@ table(df_all$site_id)
 
 # Filter Duplicates -------------------------------------------------------
 
-# check for duplicates
-df_all %>% group_by(site_id, datetime) %>% distinct() %>% nrow()
+# get distinct records first
+df_all %>% group_by(site_id, datetime) %>% distinct() %>% nrow() # n=653745
+
+# then find total duplicates
 nrow(df_all) - 653745 # n=66763
-# df_all[duplicated(df_all),] %>% View()# nrow 66,763
+
+# if you want to view duplicates to double check
+# df_all[duplicated(df_all),] %>% View()# n=66763
 
 # make final dataset with distincts removed
-df_final <- df_all %>% group_by(site_id, datetime) %>% distinct()
+df_final <- df_all %>% group_by(site_id, datetime) %>% distinct(.keep_all = TRUE) %>%
+  ungroup()
 
 # Plot --------------------------------------------------------------------
 
@@ -194,18 +200,27 @@ ggplot() +
   labs(title = "VN GW groundwater temperature", x="") +
   theme_bw()
 
-#ggsave(filename = "figures/gw_vn_loggers_compensated_temps.png",       width = 11, height = 8.5, dpi=300)
+ggsave(filename = "figures/gw_vn_loggers_compensated_temps.png",
+       width = 11, height = 8.5, dpi=300)
 
 # Stage
 ggplot() + 
   geom_line(data=df_final, aes(x=datetime, y=piezo_comp_level_ft), color="cyan4")+
-  facet_wrap(.~site_id)+  labs(title = "VN GW groundwater piezo compensated data", x="") +
+  facet_wrap(.~site_id) + 
+  labs(title = "VN GW groundwater piezo compensated data", x="") +
   theme_bw()
 
-#ggsave(filename = "figures/gw_loggers_compensated_raw_stage.png",
- #      width = 11, height = 8.5, dpi=300)
-
+ggsave(filename = "figures/gw_loggers_compensated_raw_stage.png",
+       width = 11, height = 8.5, dpi=300)
 
 # Export Data -------------------------------------------------------------
 
+# zipped csv is about 3-5MB otherwise it's 70MB
 write_csv(df_final, file = "data_output/vn_well_loggers_2013-2021_compensated.csv.gz")
+
+# read in with readr::read_csv()
+
+# write to rds to save space
+write_rds(df_final, file = "data_output/vn_well_loggers_2013-2021_compensated.rds", compress = "gz")
+
+# read in with readRDS or readr::read_rds
