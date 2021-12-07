@@ -106,7 +106,7 @@ df_xls %>% group_by(site_id, year(datetime)) %>% tally() %>% View() # YES!
 
 # Export it Out -----------------------------------------------------------
 
-write_csv(df_xls, file = "data_output/vn_well_loggers_2013-2017_compensated.csv")
+write_csv(df_xls, file = "data_output/vn_well_loggers_2013-2017_compensated.csv.gz")
 
 # Read in csv Files -----------------------------------------------------------
 
