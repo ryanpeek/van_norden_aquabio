@@ -15,6 +15,12 @@ library(purrr)
 
 # List Files --------------------------------------------------------------
 
+# some of the older data is in this format:
+# VN_G02_2013_2017 Raw and Compensated Data.xlsx
+# with two tabs: Raw Data Compensated data
+# complete data is in?
+## ~/Box Sync/Van_Norden/DATA_RAW/hydrology/SYRCL_Levelogger_Data/Levelogger_Data
+
 comp_files <- fs::dir_ls("~/Box Sync/Van_Norden/DATA_RAW/hydrology/groundwater/loggers_downloaded/", 
            recurse = TRUE,
            regexp = "[Compensated].csv")
