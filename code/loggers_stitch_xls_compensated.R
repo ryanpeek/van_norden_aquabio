@@ -15,51 +15,56 @@ library(purrr)
 library(readxl)
 
 # complete data seems to be here:
-## ~/Box Sync/Van_Norden/DATA_RAW/hydrology/SYRCL_Levelogger_Data/Levelogger_Data
+box_dir <- "~/Box Sync/Van_Norden/DATA_RAW/hydrology/SYRCL_Levelogger_Data/Levelogger_Data"
 
-# List Files --------------------------------------------------------------
+# List XLSX Files --------------------------------------------------------------
 
-# some of the older data is in this format:
-# VN_G02_2013_2017 Raw and Compensated Data.xlsx
-# with two tabs: Raw Data Compensated data
+# Most of excel files have file with two tabs:
+## Raw Data
+## Compensated data
 
 # this is all XLSX files (includes CCAM, YRBD, and YRAD OLD).
-xls_paths <- fs::dir_ls("~/Box Sync/Van_Norden/DATA_RAW/hydrology/SYRCL_Levelogger_Data/", 
-                        recurse = TRUE, # look through all folders
-                        # the regexp looks for c/Compensated files ending in xlsx
-                        regexp = "(?i)Compensated(.*).xlsx$") 
-xls_paths
+(xls_paths <- fs::dir_ls(box_dir, 
+                         recurse = TRUE, # look through all folders
+                         # files w 'c/Compensated' ending in xlsx
+                         regexp = "(?i)Compensated(.*).xlsx$"))
+length(xls_paths) # n=16
 
 # all the groundwater sites have 2 sheets that will need to be merged
 sheet_names <- map(xls_paths, ~readxl::excel_sheets(.x))
 sheet_names
 
+
+# List XLSX VN Groundwater Sites Only -------------------------------------
+
 # We only want Groundwater Well sites, they all start with VN
+## get only VN sites (C-03, D-02, G-02, G-04, G-05, H-02, I-02, F-03)
+## all but B-01 [2019-2021]
+## F-03 [2013 only] are 2013-2021
 
-# get only VN sites (C-03, D-02, G-02, G-04, G-05, H-02, I-02, F-03)
-# all but B-01 [2019-2021] and F-03 [2013 only] are 2013-2021
-xls_vn_paths <- fs::dir_ls("~/Box Sync/Van_Norden/DATA_RAW/hydrology/SYRCL_Levelogger_Data/", 
-                        recurse = TRUE, # look through all folders
-                        regexp = "VN_(.*)(?i)Compensated(.*).xlsx$") 
+xls_vn_paths <- fs::dir_ls(box_dir,
+                           recurse = TRUE, # look through all folders
+                           regexp = "VN_(.*)(?i)Compensated(.*).xlsx$") 
 
-xls_vn_paths
+length(xls_vn_paths)
+
 # main directories (and associated sites)
 (main_vn_sites <- basename(fs::path_dir(xls_vn_paths)))
+
+# check there are 2 sheets for each
 (vn_sheet_names <- map(xls_vn_paths, ~readxl::excel_sheets(.x)))
 
 # Write Function to Read in Sheets ----------------------------------------
 
-# write function to read in first tab:
-## format dates
-## select temperature data
-## then read in second tab and format
-## then join with compensated stage data
+# write function to read in data: 
+  ## First tab: format dates, select temperature data
+  ## Second tab: format dates & join temp w compensated stage
 
-# to test
-#path_to_file <- xls_vn_paths[1]
+# to test use this: #path_to_file <- xls_vn_paths[1]
 
+# function:   # requires a pathname to file of interest
 clean_vn_excel_loggerdata <- function(path_to_file){
-  # requires a pathname to file of interest
+
   # get temperature data
   tempdata <- read_xlsx(path_to_file, sheet = 1) %>% 
     clean_names() %>% 
@@ -67,7 +72,9 @@ clean_vn_excel_loggerdata <- function(path_to_file){
     mutate(time = format(time, "%H:%M:%S"),
            date = as.Date(date),
            datetime = ymd_hms(paste0(date," ",time)),
+           # deal with potential for hourly data to be not on hour
            datetime = round_date(datetime, unit="hour")) %>% 
+    # select just the stuff we want
     select(datetime, piezo_temp_C = 4)
   # get stage data
   stagedata <- read_xlsx(path_to_file, sheet = 2) %>% 
@@ -87,6 +94,7 @@ clean_vn_excel_loggerdata <- function(path_to_file){
 
 # Apply Function ----------------------------------------------------------
 
+# apply function
 df_xls <- map_df(xls_vn_paths, ~clean_vn_excel_loggerdata(.x))
 
 # visualize!? (we know F03 has only one year or less of data)
@@ -94,33 +102,30 @@ ggplot() +
   geom_line(data=df_xls, aes(x=datetime, y=piezo_comp_level_ft), color="cyan4")+
   facet_wrap(.~site_id)+  labs(title = "VN GW groundwater piezo compensated data", x="") +
   theme_bw()
-
-# great
-
-# Evaluate It Worked? -----------------------------------------------------
+# yay
 
 table(df_xls$site_id) # check it worked?
 
-df_xls %>% group_by(site_id, year(datetime)) %>% tally() %>% View() # YES!
+# df_xls %>% group_by(site_id, year(datetime)) %>% tally() %>% View() # YES!
 # looks like only 2013-2017
 
 # Export it Out -----------------------------------------------------------
 
-write_csv(df_xls, file = "data_output/vn_well_loggers_2013-2017_compensated.csv.gz")
+#write_csv(df_xls, file = "data_output/vn_well_loggers_2013-2017_compensated.csv.gz")
 
 # Read in csv Files -----------------------------------------------------------
 
-# this is reading from SYRCL but the other folder has more data for the csvs?
-
+# now do the same with the csvs
 # read in all comp csv data from VN loggers
-(comp_csv_files <- fs::dir_ls("~/Box Sync/Van_Norden/DATA_RAW/hydrology/groundwater/loggers_downloaded/", 
-                         recurse = TRUE,
-                         #regexp = "(?i)Compensated(.*).csv$"))
-                         regexp = "VN_(.*)(?i)Compensated(.*).csv$"))
+(comp_csv_files <- fs::dir_ls(box_dir, 
+                              recurse = TRUE,
+                              #regexp = "(?i)Compensated(.*).csv$"))
+                              regexp = "VN_(.*)(?i)Compensated(.*).csv$"))
 
-# warning is ok
-# FIX TO READ IN EACH AND CHECK!
-df_all <- read_csv(comp_csv_files, id = "filename", skip = 11) %>% 
+# read in each and check?
+df_csv <- read_csv(comp_csv_files, 
+                   id = "filename", skip = 11, 
+                   show_col_types = FALSE) %>% 
   # add datetime
   mutate(datetime_mdy=mdy_hms(glue("{Date} {Time}")),
          datetime_ymd=ymd_hms(glue("{Date} {Time}"))) %>% 
@@ -128,7 +133,7 @@ df_all <- read_csv(comp_csv_files, id = "filename", skip = 11) %>%
   select(-c(datetime_mdy, datetime_ymd, ms, Date, Time)) %>% 
   # fix filename
   mutate(site_full = basename(fs::path_dir(filename)),
-         # double check date and round:
+         # double check date and round to keep consistent
          datetime = round_date(datetime, unit = "hour")) %>% 
   rename(piezo_comp_level_ft = LEVEL, piezo_temp_C = TEMPERATURE) %>% 
   # reorder
@@ -145,22 +150,44 @@ df_all <- read_csv(comp_csv_files, id = "filename", skip = 11) %>%
   ))
 
 # view
-summary(df_all)
-# so all this data is only 2020 and 2021
+summary(df_csv)
+
+# check site ids
 table(df_all$site_full)
 table(df_all$site_id)
-table(df_xls$site_id) # fix sites so they bind ok
 
-# JOIN IT ALL! ------------------------------------------------------------
+# plot each and check?
+df_csv %>% filter(site_id=="VN_C03") %>% 
+  ggplot(data=.) + 
+  geom_line(aes(x=datetime, y=piezo_comp_level_ft), color="cyan4") +
+  labs(title = "VN GW groundwater piezo compensated data", x="") +
+  theme_bw()
+  
+#ok looks good
 
-df_final <- bind_rows(df_all, df_xls)
+# JOIN IT ALL! -------------------------------------------------------
 
-table(df_final$site_id)
-summary(df_final)
+# use janitor
+janitor::compare_df_cols(df_xls, df_csv)
+janitor::compare_df_cols_same(df_xls, df_csv)
+df_all <- bind_rows(df_xls, df_csv)
+
+# check sites
+table(df_all$site_id)
+
+# Filter Duplicates -------------------------------------------------------
+
+# check for duplicates
+df_all %>% group_by(site_id, datetime) %>% distinct() %>% nrow()
+nrow(df_all) - 653745 # n=66763
+# df_all[duplicated(df_all),] %>% View()# nrow 66,763
+
+# make final dataset with distincts removed
+df_final <- df_all %>% group_by(site_id, datetime) %>% distinct()
 
 # Plot --------------------------------------------------------------------
 
-# Temp
+# Temp: we know B01 and F03 don't have the full year range
 ggplot() + 
   geom_line(data=df_final, aes(x=datetime, y=piezo_temp_C), color="orange3")+
   facet_wrap(.~site_id) +
@@ -175,6 +202,10 @@ ggplot() +
   facet_wrap(.~site_id)+  labs(title = "VN GW groundwater piezo compensated data", x="") +
   theme_bw()
 
-
 #ggsave(filename = "figures/gw_loggers_compensated_raw_stage.png",
  #      width = 11, height = 8.5, dpi=300)
+
+
+# Export Data -------------------------------------------------------------
+
+write_csv(df_final, file = "data_output/vn_well_loggers_2013-2021_compensated.csv.gz")
