@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>2020_vannorden_aqbio_pts.kml</name>
+	<StyleMap id="msn_wht-circle">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_wht-circle</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_wht-circle</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_wht-circle">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/wht-circle-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_blu-circle">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_blu-circle">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<StyleMap id="msn_blu-circle">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_blu-circle0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_blu-circle</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_blu-circle0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff800040</color>
+			<width>1.1</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>66ff0080</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_blu-circle0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_blu-circle</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_blu-circle1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-stars.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-stars-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_blu-circle0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_blu-circle1">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_wht-circle0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/wht-circle-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-stars.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-stars-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<StyleMap id="msn_wht-circle0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_wht-circle0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_wht-circle0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff800040</color>
+			<width>1.1</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>66ff0080</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_wht-circle">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/wht-circle-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<StyleMap id="msn_blu-circle1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_blu-circle1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_blu-circle0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_wht-circle0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/wht-circle-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_blu-circle1">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Folder>
+		<name>Waypoints</name>
+		<open>1</open>
+		<Placemark>
+			<name>WaterEdge_1</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<coordinates>-120.3763020106006,39.31765753425551,2047.610962</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>WaterEdge_2</name>
+			<LookAt>
+				<gx:TimeStamp><when>2020-05-28T20:13:23Z</when>
+</gx:TimeStamp>
+				<gx:ViewerOptions>
+					<gx:option name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option enabled="0" name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>-120.3754927221198</longitude>
+				<latitude>39.31764426533538</latitude>
+				<altitude>0</altitude>
+				<heading>0.0005192565707325855</heading>
+				<tilt>29.16714992735025</tilt>
+				<range>152.6839409778495</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-120.3755769962383,39.31750604556721,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>WQ1</name>
+			<LookAt>
+				<gx:TimeStamp><when>2020-05-28T20:13:23Z</when>
+</gx:TimeStamp>
+				<gx:ViewerOptions>
+					<gx:option name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option enabled="0" name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>-120.3743707826433</longitude>
+				<latitude>39.31794940669192</latitude>
+				<altitude>0</altitude>
+				<heading>-0.0001241889314147348</heading>
+				<tilt>42.69455653977389</tilt>
+				<range>840.3540164364725</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_blu-circle</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-120.377516463343,39.32054076625989,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>WQ2</name>
+			<LookAt>
+				<gx:TimeStamp><when>2020-05-28T20:13:23Z</when>
+</gx:TimeStamp>
+				<gx:ViewerOptions>
+					<gx:option name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option enabled="0" name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>-120.3743707826433</longitude>
+				<latitude>39.31794940669192</latitude>
+				<altitude>0</altitude>
+				<heading>-0.0001241889314147348</heading>
+				<tilt>42.69455653977389</tilt>
+				<range>840.3540164364725</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_blu-circle</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-120.3780870296273,39.31985993569886,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>WQ3</name>
+			<LookAt>
+				<gx:TimeStamp><when>2020-05-28T20:13:23Z</when>
+</gx:TimeStamp>
+				<gx:ViewerOptions>
+					<gx:option name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option enabled="0" name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>-120.3759408547018</longitude>
+				<latitude>39.31885717644469</latitude>
+				<altitude>0</altitude>
+				<heading>-0.0007835761595418326</heading>
+				<tilt>23.65080217607665</tilt>
+				<range>291.4306787423156</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_blu-circle1</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-120.3746012798274,39.31692547257651,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>WQ4</name>
+			<LookAt>
+				<gx:TimeStamp><when>2020-05-28T20:13:23Z</when>
+</gx:TimeStamp>
+				<gx:ViewerOptions>
+					<gx:option name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option enabled="0" name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>-120.3757240335473</longitude>
+				<latitude>39.31943735312645</latitude>
+				<altitude>0</altitude>
+				<heading>3.056468906922327e-05</heading>
+				<tilt>28.05138662023487</tilt>
+				<range>204.963539293215</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_blu-circle</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-120.3761694093365,39.31903291802504,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>WQ5</name>
+			<LookAt>
+				<longitude>-120.3758203109187</longitude>
+				<latitude>39.32069294398243</latitude>
+				<altitude>0</altitude>
+				<heading>-9.443379849563991e-05</heading>
+				<tilt>23.66300893710885</tilt>
+				<range>80.89887822641846</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_blu-circle0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-120.3758836009364,39.32078322261596,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>CC1</name>
+			<LookAt>
+				<longitude>-120.3718643246612</longitude>
+				<latitude>39.32256566476499</latitude>
+				<altitude>0</altitude>
+				<heading>-3.304553097617932e-05</heading>
+				<tilt>19.78714644404211</tilt>
+				<range>122.8758482391223</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_blu-circle0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-120.3716524334363,39.32257958463485,0</coordinates>
+			</Point>
+		</Placemark>
+		<Folder>
+			<name>BreedingAreas</name>
+			<open>1</open>
+			<Placemark>
+				<name>Toad_B01</name>
+				<styleUrl>#msn_ylw-pushpin</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-120.377481601835,39.31962677210412,0 -120.3774855021136,39.31961016142331,0 -120.3774538806681,39.31960374296203,0 -120.3774440866449,39.31961920822276,0 -120.377429617668,39.31963270064109,0 -120.3774075678983,39.31963563728023,0 -120.3774113767284,39.31965158062838,0 -120.3774176229879,39.31965411536483,0 -120.3774317313738,39.3196546237584,0 -120.3774569247988,39.31964255203749,0 -120.3774745299877,39.31963262497165,0 -120.377481601835,39.31962677210412,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Toad_B02</name>
+				<styleUrl>#msn_ylw-pushpin</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-120.3772544643855,39.31907150625401,0 -120.3772385520257,39.31906805381901,0 -120.3772289827581,39.3190450269848,0 -120.3772188611235,39.31901570364098,0 -120.3772015644673,39.31896365824918,0 -120.3771673919035,39.31890823306395,0 -120.3771518306418,39.31890852114297,0 -120.3771478050965,39.31893096437538,0 -120.3771745523932,39.31898885574168,0 -120.3771828609558,39.31903754020387,0 -120.3772315160172,39.31908638343512,0 -120.3772544643855,39.31907150625401,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Toad_B03</name>
+				<styleUrl>#msn_ylw-pushpin</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-120.3767656250682,39.31803731625494,0 -120.3767679215559,39.31802634366131,0 -120.3767606778697,39.31799972228519,0 -120.3767467668426,39.31798283145297,0 -120.3767162692113,39.31797277426499,0 -120.3766632102809,39.31796358277285,0 -120.3766315380051,39.31796428463638,0 -120.3766233573901,39.31796851413119,0 -120.376639622191,39.3179835555347,0 -120.3766816567515,39.31800345579049,0 -120.3767495555076,39.31802945920001,0 -120.3767656250682,39.31803731625494,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Toad_B04</name>
+				<styleUrl>#msn_ylw-pushpin</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-120.376337776422,39.31762013694486,0 -120.3763456221898,39.31760209270657,0 -120.3763497233315,39.31758354587721,0 -120.3763520065896,39.31756963632898,0 -120.3763479049477,39.31755209923581,0 -120.3763418453,39.31754231931696,0 -120.3763184538695,39.31753701279902,0 -120.3762981727567,39.31753941818206,0 -120.3762999363354,39.3175516055744,0 -120.3762925251313,39.3175711644342,0 -120.3762964671339,39.31758825783841,0 -120.3762914399215,39.31760533182092,0 -120.3762792555332,39.317627398855,0 -120.3762744834844,39.3176433476996,0 -120.3762688805407,39.31766329744671,0 -120.3762764146598,39.31767839204937,0 -120.3762848099137,39.31769011455222,0 -120.3763027689056,39.31769011478131,0 -120.376337776422,39.31762013694486,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Toad_B05</name>
+				<description>Toad_B05</description>
+				<styleUrl>#msn_ylw-pushpin</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-120.3762437481779,39.31740047808813,0 -120.3762313646832,39.31739278325642,0 -120.3762157162955,39.31739049266228,0 -120.3761899813916,39.31738291715009,0 -120.376155484943,39.317383669687,0 -120.3761246044164,39.31738366936084,0 -120.3761000446203,39.31738442318852,0 -120.3760698331134,39.3173874488645,0 -120.3760607193357,39.31739892824837,0 -120.3760669755884,39.31741377196615,0 -120.3760828336004,39.31741298221736,0 -120.376106137023,39.31741140584462,0 -120.3761368471619,39.31740748121901,0 -120.376166455464,39.31740591847956,0 -120.3761971051194,39.31741140772642,0 -120.3762256106213,39.31742493553182,0 -120.3762436336637,39.31742816020629,0 -120.3762456286449,39.31741535801329,0 -120.3762437481779,39.31740047808813,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Toad_B06</name>
+				<description>Toad_B06</description>
+				<styleUrl>#msn_ylw-pushpin</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-120.3757199673754,39.31751875527364,0 -120.3757247102621,39.3175042355778,0 -120.3757220854723,39.31749226967514,0 -120.3757091944463,39.3174878424672,0 -120.3756841011434,39.31749152959016,0 -120.3756491784199,39.31749301069617,0 -120.3756152721021,39.31749747593503,0 -120.3755705542731,39.31749822343645,0 -120.3755553357242,39.31750726404443,0 -120.3755400059348,39.31751440337361,0 -120.3755153787628,39.3175247959122,0 -120.3754750797937,39.31754384866993,0 -120.3754381390007,39.31755337507527,0 -120.3753978398799,39.3175680977893,0 -120.3753933623687,39.31759667687424,0 -120.3754011983101,39.31761919379989,0 -120.3754303031973,39.31763131819214,0 -120.3754538109534,39.31763478227118,0 -120.3754761993837,39.31764344257569,0 -120.3754985876958,39.31762352382815,0 -120.3755142595379,39.31760620315499,0 -120.3754985876667,39.3175984089352,0 -120.3754974682089,39.31758974858032,0 -120.3755041847492,39.31757415995871,0 -120.3755086624323,39.31756290152229,0 -120.3755299313734,39.31755597320078,0 -120.3755590361496,39.31754644664051,0 -120.375579185693,39.31754384850247,0 -120.3756116488329,39.317535188064,0 -120.3756396343373,39.3175325898757,0 -120.3756597838589,39.31752566149144,0 -120.3756844111216,39.31752566135872,0 -120.3757012024445,39.31752566130292,0 -120.3757199673754,39.31751875527364,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Toad_B07</name>
+				<description>Toad_B07</description>
+				<styleUrl>#msn_ylw-pushpin</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-120.375291495084,39.31770233290985,0 -120.3753015698729,39.31769540461067,0 -120.3753116446999,39.3176737539543,0 -120.3752970923439,39.31765210306312,0 -120.3752679874516,39.3176330503549,0 -120.3752433601995,39.31763391641569,0 -120.3752075387781,39.31762265789288,0 -120.3751784338701,39.31760360511121,0 -120.375157164877,39.3176036050518,0 -120.3751414930185,39.31760966731206,0 -120.375122462857,39.31763564817827,0 -120.3751403733714,39.3176685576941,0 -120.3752008221314,39.3176945387549,0 -120.3752691067372,39.31770060097997,0 -120.375291495084,39.31770233290985,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Toad_B08</name>
+				<styleUrl>#msn_ylw-pushpin</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-120.3742525347376,39.31769038080331,0 -120.374314520498,39.31768321629244,0 -120.3743267767661,39.31765474310309,0 -120.3743139654133,39.31763124461289,0 -120.3742329038525,39.31763827062395,0 -120.374182305303,39.31763826971876,0 -120.3741263642925,39.3176476680953,0 -120.3740721658742,39.31761259058093,0 -120.3740386581567,39.31761723966531,0 -120.3740166477696,39.31765946254932,0 -120.3740366185928,39.31767606513803,0 -120.374045737365,39.31771923358006,0 -120.374143081279,39.3177289230264,0 -120.3742081891685,39.31771440547285,0 -120.3742525347376,39.31769038080331,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Eggs</name>
+			<Placemark>
+				<name>VN20-E01</name>
+				<styleUrl>#msn_wht-circle0</styleUrl>
+				<Point>
+					<coordinates>-120.377469649596,39.31962079460966,2055.147949</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E02</name>
+				<styleUrl>#msn_wht-circle0</styleUrl>
+				<Point>
+					<coordinates>-120.3772474795139,39.31904821984831,2049.607666</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E03</name>
+				<styleUrl>#msn_wht-circle0</styleUrl>
+				<Point>
+					<coordinates>-120.377171068966,39.31892037131847,2047.769653</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E04</name>
+				<styleUrl>#msn_wht-circle0</styleUrl>
+				<Point>
+					<coordinates>-120.3767421800358,39.31798277529458,2046.267334</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E05</name>
+				<styleUrl>#msn_wht-circle0</styleUrl>
+				<Point>
+					<coordinates>-120.3763020106006,39.31765753425551,2047.610962</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E06</name>
+				<styleUrl>#msn_wht-circle0</styleUrl>
+				<Point>
+					<coordinates>-120.3762306503295,39.3173946642499,2048.348145</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E07</name>
+				<LookAt>
+					<gx:TimeStamp><when>2020-05-28T20:13:23Z</when>
+</gx:TimeStamp>
+					<gx:ViewerOptions>
+						<gx:option name="historicalimagery"></gx:option>
+						<gx:option enabled="0" name="sunlight"></gx:option>
+						<gx:option enabled="0" name="streetview"></gx:option>
+					</gx:ViewerOptions>
+					<longitude>-120.3761949259979</longitude>
+					<latitude>39.31746094956038</latitude>
+					<altitude>0</altitude>
+					<heading>-0.001165845547340669</heading>
+					<tilt>31.86287244974704</tilt>
+					<range>73.52863462004657</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_wht-circle</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-120.3760210521876,39.31741696370475,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E08</name>
+				<styleUrl>#msn_wht-circle0</styleUrl>
+				<Point>
+					<coordinates>-120.3754931857731,39.31757622665784,2048.245605</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E09</name>
+				<styleUrl>#msn_wht-circle0</styleUrl>
+				<Point>
+					<coordinates>-120.3740978785093,39.31767086514502,2050.046387</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E10</name>
+				<LookAt>
+					<gx:TimeStamp><when>2020-05-28T20:13:23Z</when>
+</gx:TimeStamp>
+					<gx:ViewerOptions>
+						<gx:option name="historicalimagery"></gx:option>
+						<gx:option enabled="0" name="sunlight"></gx:option>
+						<gx:option enabled="0" name="streetview"></gx:option>
+					</gx:ViewerOptions>
+					<longitude>-120.3745706684738</longitude>
+					<latitude>39.31786617407106</latitude>
+					<altitude>0</altitude>
+					<heading>-7.332448843819353e-05</heading>
+					<tilt>30.00069677780269</tilt>
+					<range>155.2179672547944</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_wht-circle</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-120.374631613129,39.31766489371181,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E11</name>
+				<LookAt>
+					<gx:TimeStamp><when>2020-05-28T20:13:23Z</when>
+</gx:TimeStamp>
+					<gx:ViewerOptions>
+						<gx:option name="historicalimagery"></gx:option>
+						<gx:option enabled="0" name="sunlight"></gx:option>
+						<gx:option enabled="0" name="streetview"></gx:option>
+					</gx:ViewerOptions>
+					<longitude>-120.3749563186507</longitude>
+					<latitude>39.31955131908394</latitude>
+					<altitude>0</altitude>
+					<heading>-0.0001598151149701309</heading>
+					<tilt>23.65269114997076</tilt>
+					<range>815.7898562087596</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_wht-circle</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-120.3748714060761,39.31807570930413,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E12</name>
+				<LookAt>
+					<gx:TimeStamp><when>2020-05-28T20:13:23Z</when>
+</gx:TimeStamp>
+					<gx:ViewerOptions>
+						<gx:option name="historicalimagery"></gx:option>
+						<gx:option enabled="0" name="sunlight"></gx:option>
+						<gx:option enabled="0" name="streetview"></gx:option>
+					</gx:ViewerOptions>
+					<longitude>-120.3749563186507</longitude>
+					<latitude>39.31955131908394</latitude>
+					<altitude>0</altitude>
+					<heading>-0.0001598151149701309</heading>
+					<tilt>23.65269114997076</tilt>
+					<range>815.7898562087596</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_wht-circle</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-120.3757453908371,39.31827560798889,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E13</name>
+				<LookAt>
+					<gx:TimeStamp><when>2020-05-28T20:13:23Z</when>
+</gx:TimeStamp>
+					<gx:ViewerOptions>
+						<gx:option name="historicalimagery"></gx:option>
+						<gx:option enabled="0" name="sunlight"></gx:option>
+						<gx:option enabled="0" name="streetview"></gx:option>
+					</gx:ViewerOptions>
+					<longitude>-120.3759963805261</longitude>
+					<latitude>39.31986333768626</latitude>
+					<altitude>0</altitude>
+					<heading>-0.0009767095044085766</heading>
+					<tilt>30.00062624112477</tilt>
+					<range>139.4409248841426</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_wht-circle</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-120.3763331023332,39.31992849924895,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>VN20-E14</name>
+				<LookAt>
+					<gx:TimeStamp><when>2020-05-28T20:13:23Z</when>
+</gx:TimeStamp>
+					<gx:ViewerOptions>
+						<gx:option name="historicalimagery"></gx:option>
+						<gx:option enabled="0" name="sunlight"></gx:option>
+						<gx:option enabled="0" name="streetview"></gx:option>
+					</gx:ViewerOptions>
+					<longitude>-120.3756692492004</longitude>
+					<latitude>39.31909907009268</latitude>
+					<altitude>0</altitude>
+					<heading>-0.0007675421956631283</heading>
+					<tilt>29.77797635277358</tilt>
+					<range>302.615521991294</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_wht-circle</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-120.3762768001914,39.32050380422363,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+	</Folder>
+</Document>
+</kml>
