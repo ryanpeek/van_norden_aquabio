@@ -1,29 +1,29 @@
 survey_date,location_id,location_name,surveyors,survey_type,sample_coll,sample_processed,data_location,notes
-2014/06/06,lake,Van Norden Lake,"RP, AO",aquatic_bio,N,,Server,"around lake edge, used dipnets and VES"
-2015/04/03,CC,Castle Creek,"RP, AO",BMI,Y,TRUE,Box-DATA_RAW/biology/VanNorden_BMI_Taxa_Entered_QC_01042019.xlsx,kicknet samples in CC downstream from bridge
-2015/06/10,SY-US,South Yuba at Bridge,"RP, AO",BMI,Y,TRUE,Box-DATA_RAW/biology/VanNorden_BMI_Taxa_Entered_QC_01042019.xlsx,kicknet samples in SY downstream of bridge in upper meadow
-2016/08/10,meadow at CP16,Meadow,"LN, AL, AB, HR",rtk,N,,Server,observed 3 coyotes in meadow
-2016/08/10,lake,Van Norden Lake,PM,toads,N,,Server,observed ANBO breeding
-2016/08/10,lake,Van Norden Lake,Rachel,toads,N,,Server,observed ANBO breeding
-2017/09/11,lake,Van Norden Lake,"RP, AO",toads,N,,Server,observed PSRE tads and yellow perch
-2017/09/11,CC,Castle Creek,"RP, GP",BMI,Y,TRUE,Box-DATA_RAW/biology/VanNorden_BMI_Taxa_Entered_QC_01042019.xlsx,kicknet samples in CC downstream from bridge
-2018/09/27,SY-US,South Yuba at Bridge,"RP, GP",BMI,Y,TRUE,Box-DATA_RAW/biology/VanNorden_BMI_Taxa_Entered_QC_01042019.xlsx,kicknet samples in SY downstream of bridge in upper meadow
-2018/09/27,CC,Castle Creek,"RP, GP",BMI,Y,TRUE,Box-DATA_RAW/biology/VanNorden_BMI_Taxa_Entered_QC_01042019.xlsx,kicknet samples in CC downstream from bridge
-2019/07/19,SY-US,South Yuba at Bridge,"RP, GP",BMI,Y,TRUE,Box-DATA_RAW/biology/VanNorden_BMI_Taxa_Entered_QC_01042019.xlsx,kicknet samples in SY downstream of bridge in upper meadow
-2019/07/24,lake,South Yuba at Bridge,"RP, LN, ABB, AMB",zoop,Y,FALSE,Lab,4 throws at lake near dam
-2019/08/21,CC,Castle Creek,"RP, LN, ABB, AMB",BMI,Y,FALSE,Lab,kicknet samples in CC downstream from bridge
-2019/08/21,SY-US,South Yuba at Bridge,"RP, LN, ABB, AMB",BMI,Y,FALSE,Lab,kicknet samples in SY downstream of bridge in upper meadow
-2019/08/21,SY-US,South Yuba at Bridge,"RP, LN, ABB, AMB",zoop,Y,FALSE,Lab,4 throws in pools downstream of upper bridge
-2019/08/21,lake,Van Norden Lake,LN,aquatic_bio,N,,Server,ANBO tadpoles in lake
-2020/05/28,lake,Van Norden Lake,RP,aquatic_bio,N,,Server,"water quality measurements, EC in Castle and lake"
-2020/06/03,lake,Van Norden Lake,RP,toads,N,,BOOK-16,"water quality, toad egg obs"
-2020/06/24,lake,Van Norden Lake,"RP, SH",toads,N,,BOOK-16,"water quality, toad egg obs"
-2020/09/23,SY-US,South Yuba at Bridge,RP,BMI,Y,FALSE,BOOK-16,9 kicks at 1 min each in CC
-2020/09/23,lake,Van Norden Lake,RP,zoop,Y,FALSE,BOOK-16,lake very low
-2020/09/23,SY-US,South Yuba at Bridge,RP,zoop,Y,FALSE,BOOK-16,4 throws in pools
-2020/09/23,CC,Castle Creek,RP,BMI,Y,FALSE,BOOK-16,9 kicks at 1 min each in CC
-2021/06/24,CC,Castle Creek,RP,BMI,Y,FALSE,BOOK-16,9 kicks at 1 min each in CC
-2021/06/24,lake,Van Norden Lake,RP,zoop,Y,TRUE,Box-DATA_RAW/biology/zooplankton,4 zooplankton throws from the dam
-2021/06/24,lake,Van Norden Lake,RP,aquatic_bio,N,FALSE,BOOK-16,"water quality, toad tadpole obs"
-2021/06/24,SY-US,South Yuba at Bridge,RP,BMI,Y,FALSE,BOOK-16,9 kicks at 1 min each in riffles
-2021/06/24,SY-US,South Yuba at Bridge,RP,zoop,Y,TRUE,Box-DATA_RAW/biology/zooplankton,"4 throws in pools, 1 ANBO buccal swab taken"
+6/6/2014,lake,Van Norden Lake,"RP, AO",aquatic_bio,N,,Server,"around lake edge, used dipnets and VES"
+4/3/2015,CC,Castle Creek,"RP, AO",BMI,Y,TRUE,Box-DATA_RAW/biology/VanNorden_BMI_Taxa_Entered_QC_01042019.xlsx,kicknet samples in CC downstream from bridge
+6/10/2015,SY-US,South Yuba at Bridge,"RP, AO",BMI,Y,TRUE,Box-DATA_RAW/biology/VanNorden_BMI_Taxa_Entered_QC_01042019.xlsx,kicknet samples in SY downstream of bridge in upper meadow
+8/10/2016,meadow at CP16,Meadow,"LN, AL, AB, HR",rtk,N,,Server,observed 3 coyotes in meadow
+8/10/2016,lake,Van Norden Lake,PM,toads,N,,Server,observed ANBO breeding
+8/10/2016,lake,Van Norden Lake,Rachel,toads,N,,Server,observed ANBO breeding
+9/11/2017,lake,Van Norden Lake,"RP, AO",toads,N,,Server,observed PSRE tads and yellow perch
+9/11/2017,CC,Castle Creek,"RP, GP",BMI,Y,TRUE,Box-DATA_RAW/biology/VanNorden_BMI_Taxa_Entered_QC_01042019.xlsx,kicknet samples in CC downstream from bridge
+9/27/2018,SY-US,South Yuba at Bridge,"RP, GP",BMI,Y,TRUE,Box-DATA_RAW/biology/VanNorden_BMI_Taxa_Entered_QC_01042019.xlsx,kicknet samples in SY downstream of bridge in upper meadow
+9/27/2018,CC,Castle Creek,"RP, GP",BMI,Y,TRUE,Box-DATA_RAW/biology/VanNorden_BMI_Taxa_Entered_QC_01042019.xlsx,kicknet samples in CC downstream from bridge
+7/19/2019,SY-US,South Yuba at Bridge,"RP, GP",BMI,Y,FALSE,Lab,kicknet samples in SY downstream of bridge in upper meadow
+7/24/2019,lake,South Yuba at Bridge,"RP, LN, ABB, AMB",zoop,Y,FALSE,Lab,4 throws at lake near dam
+8/21/2019,CC,Castle Creek,"RP, LN, ABB, AMB",BMI,Y,FALSE,Lab,kicknet samples in CC downstream from bridge
+8/21/2019,SY-US,South Yuba at Bridge,"RP, LN, ABB, AMB",BMI,Y,FALSE,Lab,kicknet samples in SY downstream of bridge in upper meadow
+8/21/2019,SY-US,South Yuba at Bridge,"RP, LN, ABB, AMB",zoop,Y,FALSE,Lab,4 throws in pools downstream of upper bridge
+8/21/2019,lake,Van Norden Lake,LN,aquatic_bio,N,,Server,ANBO tadpoles in lake
+5/28/2020,lake,Van Norden Lake,RP,aquatic_bio,N,,Server,"water quality measurements, EC in Castle and lake"
+6/3/2020,lake,Van Norden Lake,RP,toads,N,,BOOK-16,"water quality, toad egg obs"
+6/24/2020,lake,Van Norden Lake,"RP, SH",toads,N,,BOOK-16,"water quality, toad egg obs"
+9/23/2020,SY-US,South Yuba at Bridge,RP,BMI,Y,FALSE,BOOK-16,9 kicks at 1 min each in CC
+9/23/2020,lake,Van Norden Lake,RP,zoop,Y,FALSE,BOOK-16,lake very low
+9/23/2020,SY-US,South Yuba at Bridge,RP,zoop,Y,FALSE,BOOK-16,4 throws in pools
+9/23/2020,CC,Castle Creek,RP,BMI,Y,FALSE,BOOK-16,9 kicks at 1 min each in CC
+6/24/2021,CC,Castle Creek,RP,BMI,Y,FALSE,BOOK-16,9 kicks at 1 min each in CC
+6/24/2021,lake,Van Norden Lake,RP,zoop,Y,TRUE,Box-DATA_RAW/biology/zooplankton,4 zooplankton throws from the dam
+6/24/2021,lake,Van Norden Lake,RP,aquatic_bio,N,FALSE,BOOK-16,"water quality, toad tadpole obs"
+6/24/2021,SY-US,South Yuba at Bridge,RP,BMI,Y,FALSE,BOOK-16,9 kicks at 1 min each in riffles
+6/24/2021,SY-US,South Yuba at Bridge,RP,zoop,Y,TRUE,Box-DATA_RAW/biology/zooplankton,"4 throws in pools, 1 ANBO buccal swab taken"

@@ -1,0 +1,26 @@
+---
+title: "Van Norden Aquatic Biology"
+description: |
+  2021 Summary
+author:
+  - name: CWS 
+    url: watershed.ucdavis.edu
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(here)
+library(glue)
+
+```
+
+Distill is a publication format for scientific and technical writing, native to the web. 
+
+Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
+
+
+
+
+
