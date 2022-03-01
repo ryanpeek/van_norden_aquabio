@@ -44,3 +44,7 @@ vignettes/*.pdf
 # maps
 figures/*.html
 docs/*.html
+
+# alias
+*.docx
+*.docx alias
