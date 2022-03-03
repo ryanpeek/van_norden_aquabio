@@ -25,5 +25,6 @@ survey_date,location_id,location_name,surveyors,survey_type,sample_coll,sample_p
 6/24/2021,CC,Castle Creek,RP,BMI,Y,FALSE,BOOK-16,9 kicks at 1 min each in CC
 6/24/2021,lake,Van Norden Lake,RP,zoop,Y,TRUE,Box-DATA_RAW/biology/zooplankton,4 zooplankton throws from the dam
 6/24/2021,lake,Van Norden Lake,RP,aquatic_bio,N,FALSE,BOOK-16,"water quality, toad tadpole obs"
+6/24/2021,SY-US,South Yuba at Bridge,RP,aquatic_bio,N,FALSE,BOOK-16,No obs
 6/24/2021,SY-US,South Yuba at Bridge,RP,BMI,Y,FALSE,BOOK-16,9 kicks at 1 min each in riffles
 6/24/2021,SY-US,South Yuba at Bridge,RP,zoop,Y,TRUE,Box-DATA_RAW/biology/zooplankton,"4 throws in pools, 1 ANBO buccal swab taken"
