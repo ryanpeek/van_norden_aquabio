@@ -200,7 +200,7 @@ vn_bmi_dom <- bind_rows(vn21_stats_safit1a_dom, vn18_stats_safit1a_dom) %>%
   geom_point(aes(x=year, y=value, fill=site), pch=21, size=5, color="gray60") +
   #geom_col(aes(y=value, x=year, fill=site), color="gray80", 
   #         lwd=0.2, position = "dodge") +
-  ylim(c(0.1, 2))+
+  ylim(c(0.1, 2.05))+
   facet_wrap(.~metric) +
   scale_fill_viridis_d("", option = "D") +
   scale_color_viridis_d("", option = "D") +
@@ -212,8 +212,8 @@ vn_bmi_dom <- bind_rows(vn21_stats_safit1a_dom, vn18_stats_safit1a_dom) %>%
         legend.direction = "horizontal") +
   labs(title = "", x="", y="Shannon's Diversity Index"))
 
-ggsave(filename = "figures/bmi_shannons_diversity_2016_2021.png", 
-       width = 8, height = 6, units = "in", dpi=300)
+#ggsave(filename = "figures/bmi_shannons_diversity_2016_2021.png", 
+#       width = 8, height = 6, units = "in", dpi=300)
 
 
 # PLOT: Dominant Taxon ---------------------------
@@ -235,8 +235,8 @@ ggsave(filename = "figures/bmi_shannons_diversity_2016_2021.png",
          legend.direction = "horizontal") +
    labs(subtitle = "Dominant Taxon", x="", y="% of Total Sample"))
 
-ggsave(filename = "figures/bmi_dom_taxa_2016_2021.png", 
-       width = 8, height = 6, units = "in", dpi=300)
+# ggsave(filename = "figures/bmi_dom_taxa_2016_2021.png", 
+#        width = 8, height = 6, units = "in", dpi=300)
 
 # PLOT: Sensitive EPT ---------------------------
 
@@ -254,8 +254,8 @@ ggsave(filename = "figures/bmi_dom_taxa_2016_2021.png",
         legend.direction = "horizontal") +
   labs(x="", y="% Sensitive EPT"))
 
-ggsave(filename = "figures/bmi_prcnt_sensitive_ept_dominant_2016_2021.png", 
-       width = 8, height = 6, units = "in", dpi=300)
+# ggsave(filename = "figures/bmi_prcnt_sensitive_ept_dominant_2016_2021.png", 
+#        width = 8, height = 6, units = "in", dpi=300)
 
 # PLOT: Tolerance Values ---------------------------
 
@@ -275,9 +275,8 @@ ggsave(filename = "figures/bmi_prcnt_sensitive_ept_dominant_2016_2021.png",
           legend.direction = "horizontal") +
     labs(subtitle = "Taxa Tolerance", x="", y="BMI Tolerance Value"))
 
-ggsave(filename = "figures/bmi_tolerance_val_2016_2021.png", 
-       width = 8, height = 6, units = "in", dpi=300)
-
+# ggsave(filename = "figures/bmi_tolerance_val_2016_2021.png", 
+#        width = 8, height = 6, units = "in", dpi=300)
 
 # Combined Plots ----------------------------------------------------------
 
